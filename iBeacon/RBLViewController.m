@@ -199,7 +199,7 @@
             [characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MINOR_UUID]]
             )
         {
-            //not need anymore as the set notify should fire to the callback
+            //not need anymore as the set notify should fire to the callback didUpdateNotificationStateForCharacteristic which has the readvalue
             //[peripheral readValueForCharacteristic:characteristic];
             
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
@@ -212,6 +212,31 @@
     }
     
 }
+
+//added
+
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error) {
+        NSLog(@"Error changing notification state: %@", error.localizedDescription);
+    }
+    
+    // Exits if it's not the transfer characteristic
+    if (![characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MAJOR_UUID]] ||
+             [characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MINOR_UUID]]
+             ) {
+        return;
+    }
+    
+    // Notification has started
+    if (characteristic.isNotifying) {
+        NSLog(@"Notification began on %@", characteristic);
+        [peripheral readValueForCharacteristic:characteristic];
+    } else { // Notification has stopped
+        // so disconnect from the peripheral
+        NSLog(@"Notification stopped on %@.  Disconnecting", characteristic);
+           }
+}
+
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
@@ -257,6 +282,7 @@
         [characteristic.value getBytes:data length:2];
         
         deviceMajor = data[0] << 8 | data[1];
+        
         
         
         [self.majorLabel setText:[NSString stringWithFormat:@"Major: %d", deviceMajor]];
