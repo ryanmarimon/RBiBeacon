@@ -195,8 +195,19 @@
     [self.deviceLabel setText:rblUUID];
 
     for (CBCharacteristic *characteristic in service.characteristics) {
+        if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MAJOR_UUID]] ||
+            [characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MINOR_UUID]]
+            )
+        {
+            //not need anymore as the set notify should fire to the callback
+            //[peripheral readValueForCharacteristic:characteristic];
+            
+            [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+            
+        }
+        
 
-        [peripheral readValueForCharacteristic:characteristic];
+        
         
     }
     
@@ -208,7 +219,7 @@
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
         return;
     }
-    
+    /*  not needed in our case since we do not need the iBeacon characteristic
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_IBEACON_UUID]]) {
         
         serviceCharacteristic = characteristic;
@@ -235,6 +246,8 @@
         
         characteristicCount++;
     }
+    */
+     
     else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MAJOR_UUID]]) {
 
         majorCharacteristic = characteristic;
@@ -267,6 +280,7 @@
         
         characteristicCount++;
     }
+    /* do not need the power characterist until we do the proximity component
     else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_POWER_UUID]]) {
 
         powerCharacteristic = characteristic;
@@ -281,8 +295,9 @@
         
         characteristicCount++;
     }
-
-    if (characteristicCount == 4)
+     */
+     
+    if (characteristicCount == 2)
     {
         self.infoView.hidden = false;
     }
