@@ -200,7 +200,7 @@
             )
         {
             //not need anymore as the set notify should fire to the callback didUpdateNotificationStateForCharacteristic which has the readvalue
-            //[peripheral readValueForCharacteristic:characteristic];
+            [peripheral readValueForCharacteristic:characteristic];
             
             [peripheral setNotifyValue:YES forCharacteristic:characteristic];
             

@@ -142,6 +142,11 @@
 				CLASSPREFIX = RBL;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = RedBearLab;
+				TargetAttributes = {
+					C21A84DE177FE2D900B38ADA = {
+						DevelopmentTeam = VL47W5JDES;
+					};
+				};
 			};
 			buildConfigurationList = C21A84DA177FE2D900B38ADA /* Build configuration list for PBXProject "iBeacon" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -267,10 +272,13 @@
 		C21A8503177FE2D900B38ADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -278,10 +286,13 @@
 		C21A8504177FE2D900B38ADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
