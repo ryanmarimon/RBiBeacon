@@ -338,7 +338,8 @@
         
         characteristicCount++;
     }
-
+     */
+     
     if (characteristicCount == 2)
     {
         self.infoView.hidden = false;
