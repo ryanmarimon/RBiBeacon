@@ -290,17 +290,20 @@
         majorCharacteristic = characteristic;
         
         
-        unsigned char data[2];
+        /*unsigned char data[2];
         [characteristic.value getBytes:data length:2];
         
         deviceMajor = data[0] << 8 | data[1];
+        */
         
+        uint8_t bytes = [characteristic.value bytes];
+       
+        uint32_t majorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
         
+        [self.majorLabel setText:[NSString stringWithFormat:@"Major: %d", majorBytes]];
+        [self.majorText setText:[NSString stringWithFormat:@"%d", majorBytes]];
         
-        [self.majorLabel setText:[NSString stringWithFormat:@"Major: %d", deviceMajor]];
-        [self.majorText setText:[NSString stringWithFormat:@"%d", deviceMajor]];
-        
-        NSLog([NSString stringWithFormat:@"%d", deviceMajor]);
+        NSLog([NSString stringWithFormat:@"%d", majorBytes]);
         
         characteristicCount++;
     }
