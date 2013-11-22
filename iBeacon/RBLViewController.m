@@ -93,7 +93,12 @@
 
     self.infoView.hidden = true;
     
-    [self.centralManager scanForPeripheralsWithServices:nil options:nil];
+    CBUUID *BLELockout = [CBUUID UUIDWithString:RBL_SERVICE_UUID];
+    
+    // Create a dictionary for passing down to the scan with service method
+    NSDictionary *scanOptions = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:CBCentralManagerScanOptionAllowDuplicatesKey];
+    
+    [self.centralManager scanForPeripheralsWithServices:[NSArray arrayWithObject:BLELockout] options:scanOptions];
     
     NSLog(@"Scanning started");
 }
@@ -165,12 +170,15 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
+    NSLog(@"I Entered didDiscoverServices");
     if (error) {
         NSLog(@"Error discovering services: %@", [error localizedDescription]);
         [self cleanup];
         return;
     }
 
+    NSArray *variable = peripheral.services;
+    
     for (CBService *service in peripheral.services) {
         
         
@@ -184,6 +192,7 @@
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
     // Deal with errors (if any)
+    NSLog(@"I Entered didDiscoverCharacteristics");
     if (error) {
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
         [self cleanup];
@@ -240,6 +249,7 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+    NSLog(@"I Entered didUpdateForCharacteristics");
     if (error) {
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
         return;
@@ -274,6 +284,8 @@
     */
      
     else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MAJOR_UUID]]) {
+        
+        NSLog(@"I Entered MAJOR");
 
         majorCharacteristic = characteristic;
         
@@ -288,9 +300,12 @@
         [self.majorLabel setText:[NSString stringWithFormat:@"Major: %d", deviceMajor]];
         [self.majorText setText:[NSString stringWithFormat:@"%d", deviceMajor]];
         
+        NSLog([NSString stringWithFormat:@"%d", deviceMajor]);
+        
         characteristicCount++;
     }
     else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MINOR_UUID]]) {
+        NSLog(@"I Entered MINOR");
         
         minorCharacteristic = characteristic;
 
@@ -303,6 +318,8 @@
         
         [self.minorLabel setText:[NSString stringWithFormat:@"Minor: %d", deviceMinor]];
         [self.minorText setText:[NSString stringWithFormat:@"%d", deviceMinor]];
+        
+        NSLog([NSString stringWithFormat:@"Minor: %d", deviceMinor]);
         
         characteristicCount++;
     }
