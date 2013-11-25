@@ -185,6 +185,44 @@
         if ([service.UUID isEqual:[CBUUID UUIDWithString:RBL_SERVICE_UUID]]) {
             characteristicCount = 0;
             [peripheral discoverCharacteristics:nil forService:service];
+            
+            
+            NSLog(@"I have determined that the SERVICE UUID is: %@", service.UUID);
+                
+            
+            //serviceCharacteristic = service.UUID;
+            
+            
+            //NSString *temp = [self getUUIDString:(__bridge CFUUIDRef)(service.UUID)];
+            //[self getHexString:serviceCharacteristic.value];
+            
+            
+            NSString *temp = [self convertCBUUIDToString:service.UUID];
+            
+            /*
+            NSRange r1 = NSMakeRange(8, 4);
+            NSRange r2 = NSMakeRange(12, 4);
+            NSRange r3 = NSMakeRange(16, 4);
+            
+            deviceService = [temp substringToIndex:8];
+            deviceService = [deviceService stringByAppendingString:@"-"];
+            deviceService = [deviceService stringByAppendingString:[temp substringWithRange:r1]];
+            deviceService = [deviceService stringByAppendingString:@"-"];
+            deviceService = [deviceService stringByAppendingString:[temp substringWithRange:r2]];
+            deviceService = [deviceService stringByAppendingString:@"-"];
+            deviceService = [deviceService stringByAppendingString:[temp substringWithRange:r3]];
+            deviceService = [deviceService stringByAppendingString:@"-"];
+            deviceService = [deviceService stringByAppendingString:[temp substringFromIndex:20]];
+            deviceService = [deviceService uppercaseString];
+            */
+            deviceService = temp;
+            
+            [self.serviceLabel setText:[NSString stringWithFormat:@"%@", deviceService]];
+            [self.serviceText setText:deviceService];
+            
+            //characteristicCount++;
+            
+            
         }
     }
 }
@@ -254,13 +292,18 @@
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
         return;
     }
-    /*  not needed in our case since we do not need the iBeacon characteristic
-    if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_IBEACON_UUID]]) {
+    //not needed in our case since we do not need the iBeacon characteristic
+    
+    /*if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_SERVICE_UUID]]) {
         
         serviceCharacteristic = characteristic;
    
+        
         NSString *temp = [self getHexString:characteristic.value];
         
+        NSLog(@"I have determined that the SERVICE UUID is: %@", temp);
+        
+    
         NSRange r1 = NSMakeRange(8, 4);
         NSRange r2 = NSMakeRange(12, 4);
         NSRange r3 = NSMakeRange(16, 4);
@@ -281,21 +324,14 @@
         
         characteristicCount++;
     }
-    */
-     
+
+     */
     else if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:RBL_CHARACTERISTIC_MAJOR_UUID]]) {
         
         NSLog(@"I Entered MAJOR");
 
         majorCharacteristic = characteristic;
-        
-        
-        /*unsigned char data[2];
-        [characteristic.value getBytes:data length:2];
-        
-        deviceMajor = data[0] << 8 | data[1];
-        */
-        
+               
         uint8_t bytes = [characteristic.value bytes];
        
         uint32_t majorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
@@ -313,14 +349,18 @@
         minorCharacteristic = characteristic;
 
         
-        unsigned char data[2];
-        [characteristic.value getBytes:data length:2];
+        uint8_t bytes = [characteristic.value bytes];
         
-        deviceMinor = data[0] << 8 | data[1];
+        uint32_t minorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
         
+        [self.minorLabel setText:[NSString stringWithFormat:@"Major: %d", minorBytes]];
+        [self.minorText setText:[NSString stringWithFormat:@"%d", minorBytes]];
         
-        [self.minorLabel setText:[NSString stringWithFormat:@"Minor: %d", deviceMinor]];
-        [self.minorText setText:[NSString stringWithFormat:@"%d", deviceMinor]];
+        NSLog([NSString stringWithFormat:@"%d", minorBytes]);
+
+        
+        [self.minorLabel setText:[NSString stringWithFormat:@"Minor: %d", minorBytes]];
+        [self.minorText setText:[NSString stringWithFormat:@"%d", minorBytes]];
         
         NSLog([NSString stringWithFormat:@"Minor: %d", deviceMinor]);
         
