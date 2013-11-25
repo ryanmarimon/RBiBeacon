@@ -482,6 +482,7 @@
     }
     [self.minorText setText:[NSString stringWithFormat:@"%d", minor]];
     
+    /*
     int power = [[self.powerText text] intValue];
     if ((power > -1) || (power < -256))
     {
@@ -490,7 +491,7 @@
         return;
     }
     [self.powerText setText:[NSString stringWithFormat:@"%d", power]];
-    
+    */
     NSData *data = uuid.data;
     [self.discoveredPeripheral writeValue:data forCharacteristic:serviceCharacteristic type:CBCharacteristicWriteWithResponse];
     
@@ -506,8 +507,8 @@
     data = [[NSData alloc] initWithBytes:buf length:2];
     [self.discoveredPeripheral writeValue:data forCharacteristic:minorCharacteristic type:CBCharacteristicWriteWithResponse];
     
-    power = power + 256;
-    buf[0] = power;
+    //power = power + 256;
+    //buf[0] = power;
     data = [[NSData alloc] initWithBytes:buf length:1];
     [self.discoveredPeripheral writeValue:data forCharacteristic:powerCharacteristic type:CBCharacteristicWriteWithResponse];
     
