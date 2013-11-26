@@ -332,7 +332,7 @@
 
         majorCharacteristic = characteristic;
                
-        uint8_t bytes = [characteristic.value bytes];
+        //uint8_t bytes = [characteristic.value bytes];
        
         uint32_t majorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
         
@@ -349,7 +349,7 @@
         minorCharacteristic = characteristic;
 
         
-        uint8_t bytes = [characteristic.value bytes];
+        //uint8_t bytes = [characteristic.value bytes];
         
         uint32_t minorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
         
@@ -472,6 +472,8 @@
     }
     [self.majorText setText:[NSString stringWithFormat:@"%d", major]];
 
+    //NSString * minor = [self.minorText text];
+    
     
     int minor = [[self.minorText text] intValue];
     if ((minor < 0) || (minor > 65535))
@@ -480,7 +482,11 @@
         [alertView show];
         return;
     }
+    
+    
     [self.minorText setText:[NSString stringWithFormat:@"%d", minor]];
+    
+    //NSData *data = uuid.data;
     
     /*
     int power = [[self.powerText text] intValue];
@@ -491,31 +497,51 @@
         return;
     }
     [self.powerText setText:[NSString stringWithFormat:@"%d", power]];
-    */
-    NSData *data = uuid.data;
-    [self.discoveredPeripheral writeValue:data forCharacteristic:serviceCharacteristic type:CBCharacteristicWriteWithResponse];
     
-    uint8_t buf[] = {0x00 , 0x00};
+    
+    [self.discoveredPeripheral writeValue:data forCharacteristic:serviceCharacteristic type:CBCharacteristicWriteWithResponse];
+    */
+     
+    
+    //uint8_t buf[] = {0x00 , 0x00};
+     
+    /*
     buf[1] =  (unsigned int) (major & 0xff);
     buf[0] =  (unsigned int) (major>>8 & 0xff);
     data = [[NSData alloc] initWithBytes:buf length:2];
     [self.discoveredPeripheral writeValue:data forCharacteristic:majorCharacteristic type:CBCharacteristicWriteWithResponse];
+    */
+     
+    
+    //buf[1] =  (unsigned int) (minor & 0xff);
+    //buf[0] =  (unsigned int) (minor>>8 & 0xff);
+    //data = [[NSData alloc] initWithBytes:buf length:2];
+
+    //UInt32 s[1];
+    //s[0] = (unsigned int) (minor);
+    
+    //const char *s=[minor UTF8String];
+    //NSData * data=[[NSData alloc] initWithBytes:s length:strlen(s)];
+    //[self.discoveredPeripheral writeValue:data forCharacteristic:minorCharacteristic type:CBCharacteristicWriteWithResponse];
     
     
-    buf[1] =  (unsigned int) (minor & 0xff);
-    buf[0] =  (unsigned int) (minor>>8 & 0xff);
-    data = [[NSData alloc] initWithBytes:buf length:2];
-    [self.discoveredPeripheral writeValue:data forCharacteristic:minorCharacteristic type:CBCharacteristicWriteWithResponse];
+    uint16_t val = minor;
+    NSData * valData = [NSData dataWithBytes:(void*)&val length:sizeof(val)];
+    [self.discoveredPeripheral writeValue:valData forCharacteristic:minorCharacteristic type:CBCharacteristicWriteWithResponse];
     
-    //power = power + 256;
-    //buf[0] = power;
+    
+    
+    /*
+    power = power + 256;
+    buf[0] = power;
     data = [[NSData alloc] initWithBytes:buf length:1];
     [self.discoveredPeripheral writeValue:data forCharacteristic:powerCharacteristic type:CBCharacteristicWriteWithResponse];
+    */
     
-    
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:[NSString stringWithFormat:@"Update successful, please restart BLE Mini!"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:nil message:[NSString stringWithFormat:@"I believe that I wrote the IsDirty flag..."] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 
+    
     
 }
 @end
