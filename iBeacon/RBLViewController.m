@@ -91,7 +91,7 @@
 - (void)scan
 {
 
-    self.infoView.hidden = true;
+    self.infoView.hidden = false;
     
     CBUUID *BLELockout = [CBUUID UUIDWithString:RBL_SERVICE_UUID];
     
