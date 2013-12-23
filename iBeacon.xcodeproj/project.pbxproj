@@ -10,6 +10,23 @@
 		9435F32B1868156500F3EA3D /* padlock_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3291868156500F3EA3D /* padlock_green.png */; };
 		9435F32C1868156500F3EA3D /* padlock_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F32A1868156500F3EA3D /* padlock_red.png */; };
 		9435F32E1868DB7500F3EA3D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9435F32D1868DB7500F3EA3D /* QuartzCore.framework */; };
+		9435F3301868E22900F3EA3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9435F32F1868E22900F3EA3D /* Images.xcassets */; };
+		9435F3421868E27900F3EA3D /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3321868E27900F3EA3D /* Icon-40.png */; };
+		9435F3431868E27900F3EA3D /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3331868E27900F3EA3D /* Icon-40@2x.png */; };
+		9435F3441868E27900F3EA3D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3341868E27900F3EA3D /* Icon-60.png */; };
+		9435F3451868E27900F3EA3D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3351868E27900F3EA3D /* Icon-60@2x.png */; };
+		9435F3461868E27900F3EA3D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3361868E27900F3EA3D /* Icon-72.png */; };
+		9435F3471868E27900F3EA3D /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3371868E27900F3EA3D /* Icon-72@2x.png */; };
+		9435F3481868E27900F3EA3D /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3381868E27900F3EA3D /* Icon-76.png */; };
+		9435F3491868E27900F3EA3D /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3391868E27900F3EA3D /* Icon-76@2x.png */; };
+		9435F34A1868E27900F3EA3D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33A1868E27900F3EA3D /* Icon-Small-50.png */; };
+		9435F34B1868E27900F3EA3D /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33B1868E27900F3EA3D /* Icon-Small-50@2x.png */; };
+		9435F34C1868E27900F3EA3D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33C1868E27900F3EA3D /* Icon-Small.png */; };
+		9435F34D1868E27900F3EA3D /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33D1868E27900F3EA3D /* Icon-Small@2x.png */; };
+		9435F34E1868E27900F3EA3D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33E1868E27900F3EA3D /* Icon.png */; };
+		9435F34F1868E27900F3EA3D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F33F1868E27900F3EA3D /* Icon@2x.png */; };
+		9435F3501868E27900F3EA3D /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3401868E27900F3EA3D /* iTunesArtwork.png */; };
+		9435F3511868E27900F3EA3D /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */; };
 		C21A84E3177FE2D900B38ADA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E2177FE2D900B38ADA /* UIKit.framework */; };
 		C21A84E5177FE2D900B38ADA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E4177FE2D900B38ADA /* Foundation.framework */; };
 		C21A84E7177FE2D900B38ADA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E6177FE2D900B38ADA /* CoreGraphics.framework */; };
@@ -28,7 +45,24 @@
 		9435F3291868156500F3EA3D /* padlock_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock_green.png; sourceTree = "<group>"; };
 		9435F32A1868156500F3EA3D /* padlock_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock_red.png; sourceTree = "<group>"; };
 		9435F32D1868DB7500F3EA3D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C21A84DF177FE2D900B38ADA /* iBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9435F32F1868E22900F3EA3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9435F3321868E27900F3EA3D /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		9435F3331868E27900F3EA3D /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		9435F3341868E27900F3EA3D /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		9435F3351868E27900F3EA3D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		9435F3361868E27900F3EA3D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		9435F3371868E27900F3EA3D /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		9435F3381868E27900F3EA3D /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		9435F3391868E27900F3EA3D /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		9435F33A1868E27900F3EA3D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		9435F33B1868E27900F3EA3D /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		9435F33C1868E27900F3EA3D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		9435F33D1868E27900F3EA3D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		9435F33E1868E27900F3EA3D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		9435F33F1868E27900F3EA3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9435F3401868E27900F3EA3D /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		C21A84DF177FE2D900B38ADA /* BLE Lockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLE Lockout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21A84E2177FE2D900B38ADA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C21A84E4177FE2D900B38ADA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C21A84E6177FE2D900B38ADA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,6 +98,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9435F3311868E27900F3EA3D /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				9435F3321868E27900F3EA3D /* Icon-40.png */,
+				9435F3331868E27900F3EA3D /* Icon-40@2x.png */,
+				9435F3341868E27900F3EA3D /* Icon-60.png */,
+				9435F3351868E27900F3EA3D /* Icon-60@2x.png */,
+				9435F3361868E27900F3EA3D /* Icon-72.png */,
+				9435F3371868E27900F3EA3D /* Icon-72@2x.png */,
+				9435F3381868E27900F3EA3D /* Icon-76.png */,
+				9435F3391868E27900F3EA3D /* Icon-76@2x.png */,
+				9435F33A1868E27900F3EA3D /* Icon-Small-50.png */,
+				9435F33B1868E27900F3EA3D /* Icon-Small-50@2x.png */,
+				9435F33C1868E27900F3EA3D /* Icon-Small.png */,
+				9435F33D1868E27900F3EA3D /* Icon-Small@2x.png */,
+				9435F33E1868E27900F3EA3D /* Icon.png */,
+				9435F33F1868E27900F3EA3D /* Icon@2x.png */,
+				9435F3401868E27900F3EA3D /* iTunesArtwork.png */,
+				9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
 		C21A84D6177FE2D900B38ADA = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +133,7 @@
 		C21A84E0177FE2D900B38ADA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C21A84DF177FE2D900B38ADA /* iBeacon.app */,
+				C21A84DF177FE2D900B38ADA /* BLE Lockout.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +159,7 @@
 				C21A84FA177FE2D900B38ADA /* MainStoryboard.storyboard */,
 				C21A84FD177FE2D900B38ADA /* RBLViewController.h */,
 				C21A84FE177FE2D900B38ADA /* RBLViewController.m */,
+				9435F32F1868E22900F3EA3D /* Images.xcassets */,
 				C21A84E9177FE2D900B38ADA /* Supporting Files */,
 			);
 			path = iBeacon;
@@ -110,6 +168,7 @@
 		C21A84E9177FE2D900B38ADA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9435F3311868E27900F3EA3D /* icons */,
 				9435F3291868156500F3EA3D /* padlock_green.png */,
 				9435F32A1868156500F3EA3D /* padlock_red.png */,
 				C21A84EA177FE2D900B38ADA /* iBeacon-Info.plist */,
@@ -140,7 +199,7 @@
 			);
 			name = iBeacon;
 			productName = iBeacon;
-			productReference = C21A84DF177FE2D900B38ADA /* iBeacon.app */;
+			productReference = C21A84DF177FE2D900B38ADA /* BLE Lockout.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,13 +239,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9435F34B1868E27900F3EA3D /* Icon-Small-50@2x.png in Resources */,
+				9435F3471868E27900F3EA3D /* Icon-72@2x.png in Resources */,
 				9435F32B1868156500F3EA3D /* padlock_green.png in Resources */,
+				9435F3481868E27900F3EA3D /* Icon-76.png in Resources */,
+				9435F3301868E22900F3EA3D /* Images.xcassets in Resources */,
+				9435F34F1868E27900F3EA3D /* Icon@2x.png in Resources */,
 				C21A84ED177FE2D900B38ADA /* InfoPlist.strings in Resources */,
 				9435F32C1868156500F3EA3D /* padlock_red.png in Resources */,
+				9435F3441868E27900F3EA3D /* Icon-60.png in Resources */,
+				9435F3501868E27900F3EA3D /* iTunesArtwork.png in Resources */,
 				C21A84F5177FE2D900B38ADA /* Default.png in Resources */,
 				C21A84F7177FE2D900B38ADA /* Default@2x.png in Resources */,
+				9435F34C1868E27900F3EA3D /* Icon-Small.png in Resources */,
 				C21A84F9177FE2D900B38ADA /* Default-568h@2x.png in Resources */,
+				9435F34E1868E27900F3EA3D /* Icon.png in Resources */,
 				C21A84FC177FE2D900B38ADA /* MainStoryboard.storyboard in Resources */,
+				9435F34D1868E27900F3EA3D /* Icon-Small@2x.png in Resources */,
+				9435F34A1868E27900F3EA3D /* Icon-Small-50.png in Resources */,
+				9435F3461868E27900F3EA3D /* Icon-72.png in Resources */,
+				9435F3511868E27900F3EA3D /* iTunesArtwork@2x.png in Resources */,
+				9435F3421868E27900F3EA3D /* Icon-40.png in Resources */,
+				9435F3431868E27900F3EA3D /* Icon-40@2x.png in Resources */,
+				9435F3491868E27900F3EA3D /* Icon-76@2x.png in Resources */,
+				9435F3451868E27900F3EA3D /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,12 +360,13 @@
 		C21A8503177FE2D900B38ADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BLE Lockout";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -298,12 +375,13 @@
 		C21A8504177FE2D900B38ADA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "BLE Lockout";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
