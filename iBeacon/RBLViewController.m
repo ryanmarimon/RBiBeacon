@@ -30,6 +30,7 @@
 @property (strong, nonatomic) CBPeripheral          *discoveredPeripheral;
 
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *scanningActivity;
 - (IBAction)scanClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UILabel *deviceLabel;
@@ -91,7 +92,9 @@
 - (void)scan
 {
 
-    self.infoView.hidden = false;
+    self.messageLabel.hidden = false;
+    [self.scanningActivity startAnimating];
+    //self.infoView.hidden = false;
     
     CBUUID *BLELockout = [CBUUID UUIDWithString:RBL_SERVICE_UUID];
     
@@ -150,6 +153,10 @@
     [self.centralManager stopScan];
     NSLog(@"Scanning stopped");
     
+    self.messageLabel.hidden = true;
+    self.scanningActivity.hidesWhenStopped = true;
+    [self.scanningActivity stopAnimating];
+
     // Make sure we get the discovery callbacks
     peripheral.delegate = self;
     
@@ -337,7 +344,15 @@
         uint32_t majorBytes = CFSwapInt16LittleToHost(*(const uint32_t *)[characteristic.value bytes]);
         
         [self.majorLabel setText:[NSString stringWithFormat:@"Major: %d", majorBytes]];
-        [self.majorText setText:[NSString stringWithFormat:@"%d", majorBytes]];
+        
+        if (majorBytes == 1){
+            [self.majorText setTextColor:[UIColor greenColor]];
+            [self.majorText setText:[NSString stringWithFormat:@"Locked!"]];
+        }
+        else {
+            [self.majorText setTextColor:[UIColor redColor]];
+            [self.majorText setText:[NSString stringWithFormat:@"Unlocked!"]];
+        }
         
         NSLog([NSString stringWithFormat:@"%d", majorBytes]);
         
@@ -381,13 +396,13 @@
         
         characteristicCount++;
     }
-     */
+
      
     if (characteristicCount == 2)
     {
         self.infoView.hidden = false;
     }
-    
+*/
     
 }
 
