@@ -7,6 +7,7 @@
 
 #import "RBLViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <QuartzCore/QuartzCore.h>
 
 #import "RBLService.h"
 
@@ -38,6 +39,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *majorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *powerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
+
+
+
 
 - (IBAction)defaultClick:(id)sender;
 - (IBAction)updateClick:(id)sender;
@@ -48,6 +56,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *powerText;
 @property (weak, nonatomic) IBOutlet UIImageView *statusLockedImage;
 @property (weak, nonatomic) IBOutlet UIImageView *statusUnlockedImage;
+@property (weak, nonatomic) IBOutlet UIButton *tagoutButton;
 
 
 
@@ -62,7 +71,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    _tagoutButton.layer.borderWidth=1.0f;
+    _tagoutButton.layer.borderColor=[[UIColor grayColor] CGColor];
+    _tagoutButton.layer.cornerRadius = 10;
     _centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
 
@@ -232,10 +243,12 @@
             deviceService = temp;
             
             [self.serviceLabel setText:[NSString stringWithFormat:@"%@", deviceService]];
-            [self.serviceText setText:deviceService];
+            //[self.serviceText setText:deviceService];
+            [self.idLabel setText:deviceService];
+            [self.nameLabel setText:[NSString stringWithFormat:@"Blast Furnace"]];
             
-            [self.lockTable numberOfRowsInSection:1];
-            self.lockCell.textLabel.text = [NSString stringWithFormat:@"%@", deviceService];
+            //[self.lockTable numberOfRowsInSection:1];
+            //self.lockCell.textLabel.text = [NSString stringWithFormat:@"%@", deviceService];
             
             //characteristicCount++;
             
@@ -359,14 +372,20 @@
         if (majorBytes == 1){
             [self.majorText setTextColor:[UIColor greenColor]];
             [self.majorText setText:[NSString stringWithFormat:@"Locked!"]];
+            [self.statusLabel setTextColor:[UIColor greenColor]];
+            [self.statusLabel setText:[NSString stringWithFormat:@"Locked!"]];
             self.statusUnlockedImage.hidden=true;
             self.statusLockedImage.hidden=false;
+            self.tagoutButton.enabled = true;
         }
         else {
             [self.majorText setTextColor:[UIColor redColor]];
             [self.majorText setText:[NSString stringWithFormat:@"Unlocked!"]];
+            [self.statusLabel setTextColor:[UIColor redColor]];
+            [self.statusLabel setText:[NSString stringWithFormat:@"Unlocked!"]];
             self.statusLockedImage.hidden=true;
             self.statusUnlockedImage.hidden=false;
+            self.tagoutButton.enabled = false;
         }
         
         NSLog([NSString stringWithFormat:@"%d", majorBytes]);
