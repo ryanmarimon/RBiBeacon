@@ -46,6 +46,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *majorText;
 @property (weak, nonatomic) IBOutlet UITextField *minorText;
 @property (weak, nonatomic) IBOutlet UITextField *powerText;
+@property (weak, nonatomic) IBOutlet UIImageView *statusLockedImage;
+@property (weak, nonatomic) IBOutlet UIImageView *statusUnlockedImage;
+
+
+
+@property (weak, nonatomic) IBOutlet UITableView *lockTable;
+@property (weak, nonatomic) IBOutlet UITableViewCell *lockCell;
 
 @end
 
@@ -227,7 +234,11 @@
             [self.serviceLabel setText:[NSString stringWithFormat:@"%@", deviceService]];
             [self.serviceText setText:deviceService];
             
+            [self.lockTable numberOfRowsInSection:1];
+            self.lockCell.textLabel.text = [NSString stringWithFormat:@"%@", deviceService];
+            
             //characteristicCount++;
+            
             
             
         }
@@ -348,10 +359,14 @@
         if (majorBytes == 1){
             [self.majorText setTextColor:[UIColor greenColor]];
             [self.majorText setText:[NSString stringWithFormat:@"Locked!"]];
+            self.statusUnlockedImage.hidden=true;
+            self.statusLockedImage.hidden=false;
         }
         else {
             [self.majorText setTextColor:[UIColor redColor]];
             [self.majorText setText:[NSString stringWithFormat:@"Unlocked!"]];
+            self.statusLockedImage.hidden=true;
+            self.statusUnlockedImage.hidden=false;
         }
         
         NSLog([NSString stringWithFormat:@"%d", majorBytes]);

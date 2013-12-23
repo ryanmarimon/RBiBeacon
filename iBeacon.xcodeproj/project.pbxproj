@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9435F32B1868156500F3EA3D /* padlock_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F3291868156500F3EA3D /* padlock_green.png */; };
+		9435F32C1868156500F3EA3D /* padlock_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 9435F32A1868156500F3EA3D /* padlock_red.png */; };
 		C21A84E3177FE2D900B38ADA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E2177FE2D900B38ADA /* UIKit.framework */; };
 		C21A84E5177FE2D900B38ADA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E4177FE2D900B38ADA /* Foundation.framework */; };
 		C21A84E7177FE2D900B38ADA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21A84E6177FE2D900B38ADA /* CoreGraphics.framework */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9435F3291868156500F3EA3D /* padlock_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock_green.png; sourceTree = "<group>"; };
+		9435F32A1868156500F3EA3D /* padlock_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = padlock_red.png; sourceTree = "<group>"; };
 		C21A84DF177FE2D900B38ADA /* iBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21A84E2177FE2D900B38ADA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C21A84E4177FE2D900B38ADA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +106,8 @@
 		C21A84E9177FE2D900B38ADA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9435F3291868156500F3EA3D /* padlock_green.png */,
+				9435F32A1868156500F3EA3D /* padlock_red.png */,
 				C21A84EA177FE2D900B38ADA /* iBeacon-Info.plist */,
 				C21A84EB177FE2D900B38ADA /* InfoPlist.strings */,
 				C21A84EE177FE2D900B38ADA /* main.m */,
@@ -170,7 +176,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9435F32B1868156500F3EA3D /* padlock_green.png in Resources */,
 				C21A84ED177FE2D900B38ADA /* InfoPlist.strings in Resources */,
+				9435F32C1868156500F3EA3D /* padlock_red.png in Resources */,
 				C21A84F5177FE2D900B38ADA /* Default.png in Resources */,
 				C21A84F7177FE2D900B38ADA /* Default@2x.png in Resources */,
 				C21A84F9177FE2D900B38ADA /* Default-568h@2x.png in Resources */,
