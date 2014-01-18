@@ -62,7 +62,7 @@
 		9435F33F1868E27900F3EA3D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		9435F3401868E27900F3EA3D /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		9435F3411868E27900F3EA3D /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		C21A84DF177FE2D900B38ADA /* BLE Lockout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLE Lockout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21A84DF177FE2D900B38ADA /* bloto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bloto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21A84E2177FE2D900B38ADA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C21A84E4177FE2D900B38ADA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C21A84E6177FE2D900B38ADA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,7 +133,7 @@
 		C21A84E0177FE2D900B38ADA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C21A84DF177FE2D900B38ADA /* BLE Lockout.app */,
+				C21A84DF177FE2D900B38ADA /* bloto.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			);
 			name = iBeacon;
 			productName = iBeacon;
-			productReference = C21A84DF177FE2D900B38ADA /* BLE Lockout.app */;
+			productReference = C21A84DF177FE2D900B38ADA /* bloto.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -313,7 +313,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -344,7 +345,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -361,12 +363,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
-				PRODUCT_NAME = "BLE Lockout";
+				PRODUCT_NAME = bloto;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,12 +378,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ryan Marimon (6F822FF2EZ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBeacon/iBeacon-Prefix.pch";
 				INFOPLIST_FILE = "iBeacon/iBeacon-Info.plist";
-				PRODUCT_NAME = "BLE Lockout";
+				PRODUCT_NAME = bloto;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
